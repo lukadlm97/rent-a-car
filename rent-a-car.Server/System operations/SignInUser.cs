@@ -11,7 +11,7 @@ namespace rent_a_car.Server.System_operations
 {
     internal class SignInUser : GeneralSystemOperation
     {
-        internal override object Execute(Domain.GeneralSystemOperation domainObject)
+        internal override object Execute(Domain.DomainObject domainObject)
         {
             User user = (User)domainObject;
             List<User> users = Broker.Instance.GetAll(user).OfType<User>().ToList();

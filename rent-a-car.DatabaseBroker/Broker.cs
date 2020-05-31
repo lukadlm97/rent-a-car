@@ -90,7 +90,7 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public void Insert(GeneralSystemOperation domainObject)
+        public void Insert(DomainObject domainObject)
         {
             try
             {
@@ -103,7 +103,7 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public void DeleteOne(GeneralSystemOperation domainObject)
+        public void DeleteOne(DomainObject domainObject)
         {
             try
             {
@@ -116,9 +116,9 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public List<GeneralSystemOperation> GetAll(GeneralSystemOperation domainObject)
+        public List<DomainObject> GetAll(DomainObject domainObject)
         {
-            List<GeneralSystemOperation> lists = new List<GeneralSystemOperation>();
+            List<DomainObject> lists = new List<DomainObject>();
 
             try
             {
@@ -145,7 +145,7 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public int GetID(GeneralSystemOperation domainObject)
+        public int GetID(DomainObject domainObject)
         {
             try
             {
@@ -166,7 +166,28 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
+        public DomainObject GetOneForID(DomainObject odo)
+        {
+            try
+            {
+                command.CommandText = $"SELECT * FROM {odo.TableName} WHERE {odo.ConditionID}";
+                reader = command.ExecuteReader();
 
+                DataTable tabela = new DataTable();
+                tabela.Load(reader);
+                reader.Close();
+
+                if (tabela.Rows.Count == 0)
+                    return null;
+                else
+                    return odo.ReadRowOfTableID(tabela.Rows[0]);
+            }
+            catch (Exception)
+            {
+                reader.Close();
+                throw;
+            }
+        }
 
 
 

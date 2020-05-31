@@ -1,5 +1,4 @@
 ﻿using rent_a_car.DatabaseBroker;
-using rent_a_car.Domain;
 using rent_a_car.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -7,16 +6,15 @@ using System.Text;
 
 namespace rent_a_car.Server.System_operations
 {
-    internal class RegisterUser : GeneralSystemOperation
+    internal class VIewCar : GeneralSystemOperation
     {
         internal override object Execute(Domain.DomainObject domainObject)
         {
-            User user = (User)domainObject;
-            user.UserID = Broker.Instance.GetID(user);
+            Car car = (Car)domainObject;
 
-            Broker.Instance.Insert(user);
+            car.CONDITIONS = $" CarID={car.CarID}";
 
-            return user;
+            return Broker.Instance.GetID(car);
         }
     }
 }

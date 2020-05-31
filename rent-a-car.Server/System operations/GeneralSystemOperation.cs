@@ -8,7 +8,7 @@ namespace rent_a_car.Server.System_operations
 {
     internal abstract class GeneralSystemOperation
     {
-        internal Object ExecuteSystemOperation(Domain.GeneralSystemOperation domainObject)
+        internal Object ExecuteSystemOperation(Domain.DomainObject domainObject)
         {
             object result = null;
             try
@@ -31,6 +31,6 @@ namespace rent_a_car.Server.System_operations
             return result;
         }
 
-        internal abstract object Execute(Domain.GeneralSystemOperation domainObject);
+        internal abstract object Execute(Domain.DomainObject domainObject);
     }
 }

@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="System operations\" />
+    <ProjectReference Include="..\rent-a-car.DatabaseBroker\rent-a-car.DatabaseBroker.csproj" />
+    <ProjectReference Include="..\rent-a-car.Domain\rent-a-car.Domain.csproj" />
   </ItemGroup>
 
 </Project>

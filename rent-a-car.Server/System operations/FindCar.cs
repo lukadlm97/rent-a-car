@@ -1,22 +1,21 @@
 ﻿using rent_a_car.DatabaseBroker;
-using rent_a_car.Domain;
 using rent_a_car.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace rent_a_car.Server.System_operations
 {
-    internal class RegisterUser : GeneralSystemOperation
+    internal class FindCar : GeneralSystemOperation
     {
         internal override object Execute(Domain.DomainObject domainObject)
         {
-            User user = (User)domainObject;
-            user.UserID = Broker.Instance.GetID(user);
+            Car car = (Car)domainObject;
 
-            Broker.Instance.Insert(user);
+            List<Car> cars = Broker.Instance.GetAll(car).OfType<Car>().ToList();
 
-            return user;
+            return cars;
         }
     }
 }
