@@ -5,10 +5,10 @@ using System.Text;
 
 namespace rent_a_car.Domain
 {
-    public interface DomainObject
+    public interface GeneralSystemOperation
     {
-        DomainObject ReadRowOfTable(DataRow row);
-        DomainObject ReadRowOfTableID(DataRow row);
+        GeneralSystemOperation ReadRowOfTable(DataRow row);
+        GeneralSystemOperation ReadRowOfTableID(DataRow row);
 
         string ID { get; }
         string TableName { get; }

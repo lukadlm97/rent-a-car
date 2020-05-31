@@ -78,7 +78,7 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public void CloseTransaction()
+        public void CloseConnection()
         {
             try
             {
@@ -90,7 +90,7 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public void Insert(DomainObject domainObject)
+        public void Insert(GeneralSystemOperation domainObject)
         {
             try
             {
@@ -103,7 +103,7 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public void DeleteOne(DomainObject domainObject)
+        public void DeleteOne(GeneralSystemOperation domainObject)
         {
             try
             {
@@ -116,9 +116,9 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public List<DomainObject> GetAll(DomainObject domainObject)
+        public List<GeneralSystemOperation> GetAll(GeneralSystemOperation domainObject)
         {
-            List<DomainObject> lists = new List<DomainObject>();
+            List<GeneralSystemOperation> lists = new List<GeneralSystemOperation>();
 
             try
             {
@@ -145,7 +145,7 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public int GetID(DomainObject domainObject)
+        public int GetID(GeneralSystemOperation domainObject)
         {
             try
             {

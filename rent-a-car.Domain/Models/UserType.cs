@@ -6,7 +6,7 @@ using System.Text;
 
 namespace rent_a_car.Domain.Models
 {
-    public class UserType:DomainObject
+    public class UserType:GeneralSystemOperation
     {
         [Browsable(true)]
         public int UserTypeID { get; set; }
@@ -57,7 +57,7 @@ namespace rent_a_car.Domain.Models
             } 
         }
         [Browsable(false)]
-        public DomainObject ReadRowOfTable(DataRow row)
+        public GeneralSystemOperation ReadRowOfTable(DataRow row)
         {
             UserType userType = new UserType()
             {
@@ -67,7 +67,7 @@ namespace rent_a_car.Domain.Models
             return userType;
         }
         [Browsable(false)]
-        public DomainObject ReadRowOfTableID(DataRow row)
+        public GeneralSystemOperation ReadRowOfTableID(DataRow row)
         {
             UserType userType = new UserType()
             {

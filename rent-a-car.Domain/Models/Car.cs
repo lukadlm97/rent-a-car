@@ -6,7 +6,7 @@ using System.Text;
 
 namespace rent_a_car.Domain.Models
 {
-    public class Car:DomainObject
+    public class Car:GeneralSystemOperation
     {
         [Browsable(false)]
         public int CarID { get; set; }
@@ -65,7 +65,7 @@ namespace rent_a_car.Domain.Models
         }
 
         [Browsable(false)]
-        public DomainObject ReadRowOfTable(DataRow row)
+        public GeneralSystemOperation ReadRowOfTable(DataRow row)
         {
             Car car = new Car()
             {
@@ -78,7 +78,7 @@ namespace rent_a_car.Domain.Models
         }
 
         [Browsable(false)]
-        public DomainObject ReadRowOfTableID(DataRow row)
+        public GeneralSystemOperation ReadRowOfTableID(DataRow row)
         {
             Car car = new Car()
             {
