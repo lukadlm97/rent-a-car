@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rent-a-car.Domain", "rent-a-car.Domain\rent-a-car.Domain.csproj", "{D491FA98-21AD-408D-B810-3BA0212E02C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rent-a-car.Domain", "rent-a-car.Domain\rent-a-car.Domain.csproj", "{D491FA98-21AD-408D-B810-3BA0212E02C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rent-a-car.DatabaseBroker", "rent-a-car.DatabaseBroker\rent-a-car.DatabaseBroker.csproj", "{41B7BD8F-8F9A-4169-99FB-CB1BAFEC2B8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rent-a-car.DatabaseBroker", "rent-a-car.DatabaseBroker\rent-a-car.DatabaseBroker.csproj", "{41B7BD8F-8F9A-4169-99FB-CB1BAFEC2B8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rent-a-car.Server", "rent-a-car.Server\rent-a-car.Server.csproj", "{8AEAF2D3-89E1-4F0E-B14C-4F4BB388E071}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rent-a-car.Server", "rent-a-car.Server\rent-a-car.Server.csproj", "{8AEAF2D3-89E1-4F0E-B14C-4F4BB388E071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rent_a_car.Client", "rent_a_car.Client\rent_a_car.Client.csproj", "{7D20F1EE-4114-40FA-AEEC-C723EA09DE20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8AEAF2D3-89E1-4F0E-B14C-4F4BB388E071}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AEAF2D3-89E1-4F0E-B14C-4F4BB388E071}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AEAF2D3-89E1-4F0E-B14C-4F4BB388E071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D20F1EE-4114-40FA-AEEC-C723EA09DE20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D20F1EE-4114-40FA-AEEC-C723EA09DE20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D20F1EE-4114-40FA-AEEC-C723EA09DE20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D20F1EE-4114-40FA-AEEC-C723EA09DE20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
