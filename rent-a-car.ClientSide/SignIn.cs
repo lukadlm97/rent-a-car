@@ -19,6 +19,26 @@ namespace rent_a_car.ClientSide
 
         }
 
+        private void btnPrijaviSe_Click(object sender,EventArgs e)
+        {
+            if (UIController.Instance.SignIn(txtKorIme, txtLozinka))
+            {
+                MessageBox.Show("Uspesna prijava!");
+                if (Sesion.Instance.User.UserType.TypeName == "admin")
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Neuspesna prijava!");
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();

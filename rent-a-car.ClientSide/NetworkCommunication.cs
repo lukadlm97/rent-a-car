@@ -1,4 +1,6 @@
-﻿using System;
+﻿using rent_a_car.Domain;
+using rent_a_car.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
@@ -44,7 +46,19 @@ namespace rent_a_car.ClientSide
             }
         }
 
+        internal object SignIn(User logInUser)
+        {
+            binaryFormater = new BinaryFormatter();
+            DataTransferObject transferObject = new DataTransferObject();
 
+            transferObject.Operation = Operation.SignIn;
+            transferObject.Object = logInUser;
 
+            binaryFormater.Serialize(clientStream, transferObject);
+
+            transferObject = (DataTransferObject)binaryFormater.Deserialize(clientStream);
+            return transferObject.Result;
+
+        }
     }
 }
