@@ -14,5 +14,19 @@ namespace rent_a_car.ClientSide
         {
             InitializeComponent();
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void DodajAuto_Click(object sender, EventArgs e)
+        {
+            FrmDodajAuto frmDodajAuto = new FrmDodajAuto();
+            frmDodajAuto.ShowDialog();
+        }
+        private void OtkaziRezervaciju_Click(object sender, EventArgs e)
+        {
+            FrmOtkazivanjeRezervacije frmOtkazivanjeRezervacije = new FrmOtkazivanjeRezervacije();
+            frmOtkazivanjeRezervacije.ShowDialog();
+        }
     }
 }

@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace rent_a_car.ClientSide
 {
-    public partial class FrmGlavnaKorisnik : Form
+    public partial class FrmOtkazivanjeRezervacije : Form
     {
-        public FrmGlavnaKorisnik()
+        public FrmOtkazivanjeRezervacije()
         {
             InitializeComponent();
         }

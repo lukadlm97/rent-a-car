@@ -1,6 +1,6 @@
-﻿namespace rent_a_car.Client
+﻿namespace rent_a_car.ClientSide
 {
-    partial class FrmOtkazivanjeRezervacija
+    partial class FrmOtkazivanjeRezervacije
     {
         /// <summary>
         /// Required designer variable.
@@ -93,8 +93,8 @@
             // 
             // btnPrikaziAuto
             // 
-            this.btnPrikaziAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnPrikaziAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrikaziAuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(100)))), ((int)(((byte)(20)))));
             this.btnPrikaziAuto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Turquoise;

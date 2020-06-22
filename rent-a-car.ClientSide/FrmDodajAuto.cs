@@ -8,15 +8,15 @@ using System.Windows.Forms;
 
 namespace rent_a_car.ClientSide
 {
-    public partial class FrmGlavnaKorisnik : Form
+    public partial class FrmDodajAuto : Form
     {
-        public FrmGlavnaKorisnik()
-        {
-            InitializeComponent();
-        }
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        public FrmDodajAuto()
+        {
+            InitializeComponent();
         }
     }
 }

@@ -64,6 +64,7 @@
             this.label1.Size = new System.Drawing.Size(21, 21);
             this.label1.TabIndex = 12;
             this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnOdjaviSe
             // 
@@ -100,6 +101,7 @@
             this.btnKreirajKorisnika.TabIndex = 16;
             this.btnKreirajKorisnika.Text = "Dodaj automobil";
             this.btnKreirajKorisnika.UseVisualStyleBackColor = false;
+            this.btnKreirajKorisnika.Click += new System.EventHandler(this.DodajAuto_Click);
             // 
             // button1
             // 
@@ -118,6 +120,7 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Otkaži rezervaciju";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.OtkaziRezervaciju_Click);
             // 
             // pictureBox1
             // 
