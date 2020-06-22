@@ -89,6 +89,7 @@
             this.btnPrijaviSe.TabIndex = 14;
             this.btnPrijaviSe.Text = "Prijavi se";
             this.btnPrijaviSe.UseVisualStyleBackColor = false;
+            this.btnPrijaviSe.Click += new System.EventHandler(this.btnPrijaviSe_Click);
             // 
             // panel2
             // 

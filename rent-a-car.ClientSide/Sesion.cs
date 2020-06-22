@@ -11,7 +11,15 @@ namespace rent_a_car.ClientSide
         public User User { get; set; }
         public Sesion()
         {
-
+            User = new User
+            {
+                UserType = new UserType
+                {
+                    TypeName = ""
+                },
+                Name = "",
+                Password = ""
+            };
         }
         public static Sesion Instance
         {

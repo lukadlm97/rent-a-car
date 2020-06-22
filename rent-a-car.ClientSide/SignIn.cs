@@ -16,7 +16,7 @@ namespace rent_a_car.ClientSide
         }
         private void label3_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Uspesna prijava!");
         }
 
         private void btnPrijaviSe_Click(object sender,EventArgs e)
@@ -26,11 +26,13 @@ namespace rent_a_car.ClientSide
                 MessageBox.Show("Uspesna prijava!");
                 if (Sesion.Instance.User.UserType.TypeName == "admin")
                 {
-
+                    FrmGlavnaAdmin frmGlavnaAdmin = new FrmGlavnaAdmin();
+                    frmGlavnaAdmin.ShowDialog();
                 }
                 else
                 {
-
+                    FrmGlavnaKorisnik frmGlavnaKorisnik = new FrmGlavnaKorisnik();
+                    frmGlavnaKorisnik.ShowDialog();
                 }
             }
             else
