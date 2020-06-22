@@ -46,6 +46,20 @@ namespace rent_a_car.ClientSide
             }
         }
 
+        internal object CreateCar(Car carForCreate)
+        {
+            binaryFormater = new BinaryFormatter();
+            DataTransferObject transferObject = new DataTransferObject();
+
+            transferObject.Operation = Operation.CreateCar;
+            transferObject.Object = carForCreate;
+
+            binaryFormater.Serialize(clientStream, transferObject);
+
+            transferObject = (DataTransferObject)binaryFormater.Deserialize(clientStream);
+            return transferObject.Result;
+        }
+
         internal object SignIn(User logInUser)
         {
             binaryFormater = new BinaryFormatter();

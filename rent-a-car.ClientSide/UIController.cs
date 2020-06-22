@@ -35,13 +35,35 @@ namespace rent_a_car.ClientSide
             return false;
         }
 
+        internal bool CreateCar(TextBox txtMarka, TextBox txtModel)
+        {
+            if (string.IsNullOrEmpty(txtMarka.Text.ToString()) ||
+                string.IsNullOrEmpty(txtModel.Text.ToString()))
+            {
+                return false;
+            }
+
+            Car carForCreate = new Car
+            {
+                Model = txtModel.Text.ToString(),
+                Brand = txtMarka.Text.ToString()
+            };
+
+            Car car = (Car)NetworkCommunication.Instance.CreateCar(carForCreate);
+
+            if (car == null)
+                return false;
+
+            return true;
+        }
+
         internal bool SignUp(TextBox txtIme, TextBox txtKorIme, TextBox txtLozinka, TextBox txtLozinka2, TextBox txtTelefon)
         {
             if (string.IsNullOrEmpty(txtIme.Text.ToString()) ||
-                string.IsNullOrEmpty(txtKorIme.ToString()) ||
-                string.IsNullOrEmpty(txtLozinka.ToString()) ||
-                string.IsNullOrEmpty(txtLozinka2.ToString()) ||
-                string.IsNullOrEmpty(txtTelefon.ToString()))
+                string.IsNullOrEmpty(txtKorIme.Text.ToString()) ||
+                string.IsNullOrEmpty(txtLozinka.Text.ToString()) ||
+                string.IsNullOrEmpty(txtLozinka2.Text.ToString()) ||
+                string.IsNullOrEmpty(txtTelefon.Text.ToString()))
             {
                 return false;
             }

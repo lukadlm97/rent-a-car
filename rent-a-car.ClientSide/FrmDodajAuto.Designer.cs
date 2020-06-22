@@ -208,6 +208,7 @@
             this.btnDodaj.TabIndex = 22;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(DodajAuto_Click);
             // 
             // btnOdbaci
             // 

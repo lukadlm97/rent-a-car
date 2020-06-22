@@ -22,5 +22,17 @@ namespace rent_a_car.ClientSide
         {
             InitializeComponent();
         }
+        private void DodajAuto_Click(object sender, EventArgs e)
+        {
+            if (UIController.Instance.CreateCar(txtMarka,txtModel))
+            {
+                MessageBox.Show("Uspesno ste kreirali automobil.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Neuspesno kreiranje automobila.");
+            }
+        }
     }
 }
