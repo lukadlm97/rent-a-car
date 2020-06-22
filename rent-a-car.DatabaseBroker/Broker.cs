@@ -32,7 +32,7 @@ namespace rent_a_car.DatabaseBroker
         {
             try
             {
-                connection = new SqlConnection(@"");
+                connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=rent_a_car_Dev;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
                 connection.Open();
             }
             catch (Exception)

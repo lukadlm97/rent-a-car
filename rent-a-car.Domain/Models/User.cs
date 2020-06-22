@@ -6,6 +6,7 @@ using System.Text;
 
 namespace rent_a_car.Domain.Models
 {
+    [Serializable]
     public class User : DomainObject
     {
         [Browsable(false)]

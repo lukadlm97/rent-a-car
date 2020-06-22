@@ -35,6 +35,43 @@ namespace rent_a_car.ClientSide
             return false;
         }
 
+        internal bool SignUp(TextBox txtIme, TextBox txtKorIme, TextBox txtLozinka, TextBox txtLozinka2, TextBox txtTelefon)
+        {
+            if (string.IsNullOrEmpty(txtIme.Text.ToString()) ||
+                string.IsNullOrEmpty(txtKorIme.ToString()) ||
+                string.IsNullOrEmpty(txtLozinka.ToString()) ||
+                string.IsNullOrEmpty(txtLozinka2.ToString()) ||
+                string.IsNullOrEmpty(txtTelefon.ToString()))
+            {
+                return false;
+            }
+            if(txtLozinka.ToString() != txtLozinka2.ToString())
+            {
+                return false;
+            }
+
+            User userForSignUp = new User
+            {
+                Name = txtKorIme.Text.ToString(),
+                Phone = txtTelefon.Text.ToString(),
+                Password = txtLozinka.Text.ToString()
+            };
+
+            User user = (User)NetworkCommunication.Instance.SignUp(userForSignUp);
+            
+            if(user == null)
+            {
+                txtIme = null;
+                txtKorIme = null;
+                txtLozinka = null;
+                txtLozinka2 = null;
+                txtTelefon = null;
+                return false;
+            }
+
+            return true;
+        }
+
         internal bool SignIn(TextBox txtKorIme, TextBox txtLozinka)
         {
             Sesion.Instance.User.UserType.TypeName = "admin";

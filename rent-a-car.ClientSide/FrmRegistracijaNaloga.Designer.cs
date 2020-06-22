@@ -61,6 +61,8 @@
             this.label2.Size = new System.Drawing.Size(19, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "_";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+
             // 
             // label1
             // 
@@ -273,6 +275,7 @@
             this.btnKreirajKorisnika.TabIndex = 14;
             this.btnKreirajKorisnika.Text = "Kreiraj korisnika";
             this.btnKreirajKorisnika.UseVisualStyleBackColor = false;
+            this.btnKreirajKorisnika.Click += new System.EventHandler(KreirajKorisnika_Click);
             // 
             // FrmRegistracijaKorisnickogNaloga
             // 

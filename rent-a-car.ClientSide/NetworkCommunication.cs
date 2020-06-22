@@ -60,5 +60,20 @@ namespace rent_a_car.ClientSide
             return transferObject.Result;
 
         }
+
+        internal object SignUp(User userForSignUp)
+        {
+            binaryFormater = new BinaryFormatter();
+            DataTransferObject transferObject = new DataTransferObject();
+
+            transferObject.Operation = Operation.SignUp;
+            transferObject.Object = userForSignUp;
+
+            binaryFormater.Serialize(clientStream, transferObject);
+
+            transferObject = (DataTransferObject)binaryFormater.Deserialize(clientStream);
+            return transferObject.Result;
+
+        }
     }
 }

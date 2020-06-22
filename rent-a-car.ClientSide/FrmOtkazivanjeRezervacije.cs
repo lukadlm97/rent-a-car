@@ -18,5 +18,9 @@ namespace rent_a_car.ClientSide
         {
             Application.Exit();
         }
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

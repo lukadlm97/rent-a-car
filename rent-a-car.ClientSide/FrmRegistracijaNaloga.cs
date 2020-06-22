@@ -18,5 +18,21 @@ namespace rent_a_car.ClientSide
         {
             Application.Exit();
         }
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void KreirajKorisnika_Click(object sender,EventArgs e)
+        {
+            if (UIController.Instance.SignUp(txtIme, txtKorIme, txtLozinka, txtLozinka2, txtTelefon))
+            {
+                MessageBox.Show("Uspesno ste kreirali nalog.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Neuspeno kreiranje naloga!");
+            }
+        }
     }
 }

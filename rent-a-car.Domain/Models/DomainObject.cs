@@ -5,6 +5,7 @@ using System.Text;
 
 namespace rent_a_car.Domain
 {
+
     public interface DomainObject
     {
         DomainObject ReadRowOfTable(DataRow row);
