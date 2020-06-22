@@ -13,6 +13,12 @@ namespace rent_a_car.Server.System_operations
         {
             User user = (User)domainObject;
             user.UserID = Broker.Instance.GetID(user);
+            
+            user.UserType = new UserType
+            {
+                UserTypeID = 1,
+                TypeName = "user"
+            };
 
             Broker.Instance.Insert(user);
 

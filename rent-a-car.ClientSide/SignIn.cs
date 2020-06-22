@@ -51,6 +51,11 @@ namespace rent_a_car.ClientSide
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmRegistracijaNaloga frmRegistracijaNaloga = new FrmRegistracijaNaloga();
+            frmRegistracijaNaloga.ShowDialog();
+        }
         private void FrmLogIn_Load(object sender, EventArgs e)
         {
             if (UIController.Instance.ConnectToServer())

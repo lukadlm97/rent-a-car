@@ -37,8 +37,7 @@ namespace rent_a_car.ClientSide
 
         internal bool SignIn(TextBox txtKorIme, TextBox txtLozinka)
         {
-            Sesion.Instance.User.UserType.TypeName = "user";
-            return true;
+           
             if(string.IsNullOrEmpty(txtKorIme.Text) || string.IsNullOrEmpty(txtLozinka.Text))
             {
                 MessageBox.Show("Sva polja su obavezna!");
