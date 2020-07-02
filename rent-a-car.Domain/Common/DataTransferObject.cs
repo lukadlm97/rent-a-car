@@ -21,6 +21,10 @@ namespace rent_a_car.Domain
         DeleteCar,
         FindCar,
         FindReservation,
-        LogOut
+        LogOut,
+        GetAllCars,
+        GetAllReservations,
+        FindByIDCar,
+        FindByIDReservation
     }
 }

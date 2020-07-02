@@ -39,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            pretragaAutomobilaToolStripMenuItem.Click += new System.EventHandler(this.pretraga_Click);
+
             // 
             // menuStrip1
             // 

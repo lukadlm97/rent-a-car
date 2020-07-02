@@ -1,6 +1,7 @@
 ﻿using rent_a_car.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Forms;
 
@@ -33,6 +34,55 @@ namespace rent_a_car.ClientSide
                 return true;
             }
             return false;
+        }
+
+        internal void SearchCars(TextBox txtMarka, TextBox txtModel, DataGridView dgvAutomobili)
+        {
+            string criteriaBrend = txtMarka.Text;
+            string criteriaModel = txtModel.Text;
+
+            Car car = new Car();
+
+            car.CONDITIONS = $"Brend LIKE '%{criteriaBrend}%' OR Model LIKE '%{criteriaModel}%'";
+
+            List<Car> cars = (List<Car>)NetworkCommunication.Instance.GetCarsByConditions(car);
+
+            if(cars == null)
+            {
+                MessageBox.Show("Nema automobila za kriterijum!");
+                return;
+            }
+            MessageBox.Show("Sistem je pronasao sledece automobile za kriterijum");
+            dgvAutomobili.DataSource = new BindingList<Car>(cars);
+        }
+
+        internal void LoadListOfReservation(DataGridView dgvReservation)
+        {
+            List<Reservation> reservations = (List<Reservation>)NetworkCommunication.Instance.LoadReservation();
+
+            if (reservations == null)
+            {
+                MessageBox.Show("Sistem ne moze da ucita rezervacije!");
+                dgvReservation.DataSource = new BindingList<Reservation>();
+                return;
+            }
+            MessageBox.Show("System has loaded cars!");
+            dgvReservation.DataSource = new BindingList<Reservation>(reservations);
+        }
+
+
+        internal void LoadListOfCars(DataGridView dgvAutomobili)
+        {
+            List<Car> cars = (List<Car>)NetworkCommunication.Instance.LoadCars();
+
+            if(cars == null)
+            {
+                MessageBox.Show("Ucitani su automobili!");
+                dgvAutomobili.DataSource = new BindingList<Car>();
+                return;
+            }
+            MessageBox.Show("System has loaded cars!");
+            dgvAutomobili.DataSource = new BindingList<Car>(cars);
         }
 
         internal bool CreateCar(TextBox txtMarka, TextBox txtModel)
@@ -126,5 +176,6 @@ namespace rent_a_car.ClientSide
             return true;
 
         }
+   
     }
 }

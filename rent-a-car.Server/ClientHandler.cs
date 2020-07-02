@@ -51,6 +51,14 @@ namespace rent_a_car.Server
                             CreateCar createCar = new CreateCar();
                             transferClass.Result = createCar.ExecuteSystemOperation(transferClass.Object);
                             break;
+                        case Operation.GetAllCars:
+                            GetAllCars get = new GetAllCars();
+                            transferClass.Result = get.ExecuteSystemOperation(transferClass.Object);
+                            break;
+                        case Operation.GetAllReservations:
+                            GetReservations reservations = new GetReservations();
+                            transferClass.Result = reservations.ExecuteSystemOperation(transferClass.Object);
+                            break;
                         case Operation.CreateReservation:
                             CreateReservation createReservation = new CreateReservation();
                             transferClass.Result = createReservation.ExecuteSystemOperation(transferClass.Object);
@@ -64,14 +72,24 @@ namespace rent_a_car.Server
                             transferClass.Result = deleteReservation.ExecuteSystemOperation(transferClass.Object);
                             break;
                         case Operation.FindCar:
-                            FindCar findCar = new FindCar();
+                            FindCars findCar = new FindCars();
                             transferClass.Result = findCar.ExecuteSystemOperation(transferClass.Object);
                             break;
                         case Operation.FindReservation:
-                            FindReservation findReservation = new FindReservation();
+                            GetReservations findReservation = new GetReservations();
                             transferClass.Result = findReservation.ExecuteSystemOperation(transferClass.Object);
                             break;
+                        case Operation.FindByIDCar:
+                            FindByIdCar find = new FindByIdCar();
+                            transferClass.Result = find.ExecuteSystemOperation(transferClass.Object);
+                        break;
+                        case Operation.FindByIDReservation:
+                            FindByIdReservation findByIdReservation = new FindByIdReservation();
+                            transferClass.Result = findByIdReservation.ExecuteSystemOperation(transferClass.Object);
+                          break;
                     }
+                    binaryFormatter.Serialize(clientStream, transferClass);
+
                 }
                 catch (Exception)
                 {

@@ -46,6 +46,58 @@ namespace rent_a_car.ClientSide
             }
         }
 
+        internal List<Car> GetCarsByConditions(Car car)
+        {
+            DataTransferObject transferObject = new DataTransferObject
+            {
+                Operation = Operation.FindCar,
+                Object = car
+            };
+
+            binaryFormater.Serialize(clientStream, transferObject);
+            transferObject = (DataTransferObject)binaryFormater.Deserialize(clientStream);
+            return (List<Car>)transferObject.Result;
+        }
+
+        internal List<Car> LoadCars()
+        {
+            DataTransferObject transferObject = new DataTransferObject
+            {
+                Operation = Operation.GetAllCars,
+                Object = new Car()
+            };
+
+            binaryFormater.Serialize(clientStream, transferObject);
+            transferObject = (DataTransferObject)binaryFormater.Deserialize(clientStream);
+            return (List<Car>)transferObject.Result;
+        }
+
+        internal List<Reservation> GetReservationsByConditions(Reservation reservation)
+        {
+            DataTransferObject transferObject = new DataTransferObject
+            {
+                Operation = Operation.FindReservation,
+                Object = reservation
+            };
+
+            binaryFormater.Serialize(clientStream, transferObject);
+            transferObject = (DataTransferObject)binaryFormater.Deserialize(clientStream);
+            return (List<Reservation>)transferObject.Result;
+        }
+
+        internal List<Reservation> LoadReservation()
+        {
+            DataTransferObject transferObject = new DataTransferObject
+            {
+                Operation = Operation.GetAllReservations,
+                Object = new Car()
+            };
+
+            binaryFormater.Serialize(clientStream, transferObject);
+            transferObject = (DataTransferObject)binaryFormater.Deserialize(clientStream);
+            return (List<Reservation>)transferObject.Result;
+        }
+
         internal object CreateCar(Car carForCreate)
         {
             binaryFormater = new BinaryFormatter();

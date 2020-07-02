@@ -90,6 +90,29 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
+        public DomainObject GetForCondition(DomainObject odo)
+        {
+            try
+            {
+                command.CommandText = $"SELECT * FROM {odo.TableName} WHERE {odo.MainCondition}";
+                reader = command.ExecuteReader();
+
+                DataTable tabela = new DataTable();
+                tabela.Load(reader);
+                reader.Close();
+
+                if (tabela.Rows.Count == 0)
+                    return null;
+                else
+                    return odo.ReadRowOfTableID(tabela.Rows[0]);
+            }
+            catch (Exception)
+            {
+                reader.Close();
+                throw;
+            }
+        }
+
         public void Insert(DomainObject domainObject)
         {
             try

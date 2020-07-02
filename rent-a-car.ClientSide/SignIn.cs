@@ -21,6 +21,7 @@ namespace rent_a_car.ClientSide
 
         private void btnPrijaviSe_Click(object sender,EventArgs e)
         {
+            
             if (UIController.Instance.SignIn(txtKorIme, txtLozinka))
             {
                 MessageBox.Show("Uspesna prijava!");

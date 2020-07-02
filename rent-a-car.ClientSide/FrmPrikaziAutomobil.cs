@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace rent_a_car.ClientSide
 {
-    public partial class FrmGlavnaKorisnik : Form
+    public partial class FrmPrikaziAutomobil : Form
     {
-        public FrmGlavnaKorisnik()
+        public FrmPrikaziAutomobil()
         {
             InitializeComponent();
         }
@@ -18,15 +18,10 @@ namespace rent_a_car.ClientSide
         {
             Application.Exit();
         }
+
         private void label2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-        
-        private void pretraga_Click(object sender, EventArgs e)
-        {
-            FrmPretragaAutomobila frmPretraga = new FrmPretragaAutomobila();
-            frmPretraga.ShowDialog();
         }
     }
 }
