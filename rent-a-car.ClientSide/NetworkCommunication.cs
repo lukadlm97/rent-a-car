@@ -72,6 +72,20 @@ namespace rent_a_car.ClientSide
             return (List<Car>)transferObject.Result;
         }
 
+        internal Car GetCarByID(Car carForDisplaying)
+        {
+            DataTransferObject transferObject = new DataTransferObject
+            {
+                Operation = Operation.FindByIDCar,
+                Object = carForDisplaying
+            };
+
+            binaryFormater.Serialize(clientStream, transferObject);
+            transferObject = (DataTransferObject)binaryFormater.Deserialize(clientStream);
+
+            return (Car)transferObject.Result;
+        }
+
         internal List<Reservation> GetReservationsByConditions(Reservation reservation)
         {
             DataTransferObject transferObject = new DataTransferObject

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rent_a_car.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,20 @@ namespace rent_a_car.ClientSide
         {
             UIController.Instance.LoadListOfCars(dgvAutomobili);
             // KontrolerKI.Instance.UcitajListuStalnihPolazaka(dgvStalniPolasci);
+        }
+        
+        private void btnPrikaziAuto_Click(object sender, EventArgs e)
+        {
+            Car car = UIController.Instance.GetCarFromDgv(dgvAutomobili);
+
+            if(car == null)
+            {
+                MessageBox.Show("Morate selektovati red u tabeli!");
+                return;
+            }
+
+            FrmPrikaziAutomobil frmPrikaziAutomobil = new FrmPrikaziAutomobil(car);
+            frmPrikaziAutomobil.ShowDialog();
         }
     }
 }

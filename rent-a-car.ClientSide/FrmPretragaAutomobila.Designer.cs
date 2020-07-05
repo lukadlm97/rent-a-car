@@ -106,6 +106,7 @@
             this.btnPrikaziAuto.TabIndex = 15;
             this.btnPrikaziAuto.Text = "Prikaži";
             this.btnPrikaziAuto.UseVisualStyleBackColor = false;
+            this.btnPrikaziAuto.Click += new System.EventHandler(this.btnPrikaziAuto_Click);
             // 
             // panel2
             // 

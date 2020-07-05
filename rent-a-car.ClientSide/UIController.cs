@@ -56,6 +56,43 @@ namespace rent_a_car.ClientSide
             dgvAutomobili.DataSource = new BindingList<Car>(cars);
         }
 
+        internal Car GetCarFromDgv(DataGridView dgvAutomobili)
+        {
+            if (dgvAutomobili.SelectedRows[0] == null)
+            {
+                MessageBox.Show("Morate odabrati polazak za prikaz detalja!");
+                return null;
+            }
+            if (dgvAutomobili.SelectedRows[0].DataBoundItem is Car car)
+            {
+                return car;
+            }
+            else
+            {
+                MessageBox.Show("Greska kod kastovanja reda tabele!");
+            }
+            return null;
+        }
+
+        internal void LoadCar(int carID, Label lblMarka, Label lblModel)
+        {
+            Car carForDisplaying = new Car
+            {
+                CarID = carID
+            };
+
+            Car foundedCar = NetworkCommunication.Instance.GetCarByID(carForDisplaying);
+
+            if(foundedCar == null)
+            {
+                MessageBox.Show("Nije moguce pronaci automobil!");
+                return;
+            }
+            lblMarka.Text = foundedCar.Brand;
+            lblModel.Text = foundedCar.Model;
+
+        }
+
         internal void LoadListOfReservation(DataGridView dgvReservation)
         {
             List<Reservation> reservations = (List<Reservation>)NetworkCommunication.Instance.LoadReservation();

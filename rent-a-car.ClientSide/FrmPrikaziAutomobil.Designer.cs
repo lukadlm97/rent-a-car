@@ -86,6 +86,7 @@
             this.btnVratiSe.TabIndex = 40;
             this.btnVratiSe.Text = "OK";
             this.btnVratiSe.UseVisualStyleBackColor = false;
+            this.btnVratiSe.Click += new System.EventHandler(this.CloseForm_Click);
             // 
             // label6
             // 
