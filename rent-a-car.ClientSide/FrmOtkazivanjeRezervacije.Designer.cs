@@ -30,10 +30,10 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvAutomobili = new System.Windows.Forms.DataGridView();
+            this.dgvRezervacije = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnPrikaziAuto = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAutomobili)).BeginInit();
+            this.btnOtkaziRezervaciju = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,22 +68,22 @@
             // 
             // dgvAutomobili
             // 
-            this.dgvAutomobili.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAutomobili.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAutomobili.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAutomobili.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.dgvAutomobili.Location = new System.Drawing.Point(37, 50);
-            this.dgvAutomobili.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvAutomobili.Name = "dgvAutomobili";
-            this.dgvAutomobili.ReadOnly = true;
-            this.dgvAutomobili.RowHeadersWidth = 51;
-            this.dgvAutomobili.Size = new System.Drawing.Size(583, 178);
-            this.dgvAutomobili.TabIndex = 5;
+            this.dgvRezervacije.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRezervacije.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRezervacije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRezervacije.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.dgvRezervacije.Location = new System.Drawing.Point(37, 50);
+            this.dgvRezervacije.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvRezervacije.Name = "dgvAutomobili";
+            this.dgvRezervacije.ReadOnly = true;
+            this.dgvRezervacije.RowHeadersWidth = 51;
+            this.dgvRezervacije.Size = new System.Drawing.Size(583, 178);
+            this.dgvRezervacije.TabIndex = 5;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnPrikaziAuto);
-            this.groupBox1.Controls.Add(this.dgvAutomobili);
+            this.groupBox1.Controls.Add(this.btnOtkaziRezervaciju);
+            this.groupBox1.Controls.Add(this.dgvRezervacije);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(72, 40);
@@ -95,20 +95,21 @@
             // 
             // btnPrikaziAuto
             // 
-            this.btnPrikaziAuto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btnOtkaziRezervaciju.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrikaziAuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(100)))), ((int)(((byte)(20)))));
-            this.btnPrikaziAuto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Turquoise;
-            this.btnPrikaziAuto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrikaziAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F);
-            this.btnPrikaziAuto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.btnPrikaziAuto.Location = new System.Drawing.Point(278, 236);
-            this.btnPrikaziAuto.Name = "btnPrikaziAuto";
-            this.btnPrikaziAuto.Size = new System.Drawing.Size(120, 52);
-            this.btnPrikaziAuto.TabIndex = 16;
-            this.btnPrikaziAuto.Text = "Prikaži";
-            this.btnPrikaziAuto.UseVisualStyleBackColor = false;
+            this.btnOtkaziRezervaciju.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(100)))), ((int)(((byte)(20)))));
+            this.btnOtkaziRezervaciju.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Turquoise;
+            this.btnOtkaziRezervaciju.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOtkaziRezervaciju.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F);
+            this.btnOtkaziRezervaciju.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.btnOtkaziRezervaciju.Location = new System.Drawing.Point(278, 236);
+            this.btnOtkaziRezervaciju.Name = "btnPrikaziAuto";
+            this.btnOtkaziRezervaciju.Size = new System.Drawing.Size(120, 52);
+            this.btnOtkaziRezervaciju.TabIndex = 16;
+            this.btnOtkaziRezervaciju.Text = "Prikaži";
+            this.btnOtkaziRezervaciju.UseVisualStyleBackColor = false;
+            this.btnOtkaziRezervaciju.Click += new System.EventHandler(this.CloseReservation_Click);
             // 
             // FrmOtkazivanjeRezervacija
             // 
@@ -122,7 +123,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmOtkazivanjeRezervacija";
             this.Text = "FrmOtkazivanjeRezervacija";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAutomobili)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,8 +134,8 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvAutomobili;
+        private System.Windows.Forms.DataGridView dgvRezervacije;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnPrikaziAuto;
+        private System.Windows.Forms.Button btnOtkaziRezervaciju;
     }
 }

@@ -59,6 +59,19 @@ namespace rent_a_car.ClientSide
             return (List<Car>)transferObject.Result;
         }
 
+        internal bool DeleteReservation(Reservation reservation)
+        {
+            DataTransferObject transferObject = new DataTransferObject
+            {
+                Operation = Operation.DeleteReservation,
+                Object = reservation
+            };
+            binaryFormater.Serialize(clientStream, transferObject);
+            transferObject = (DataTransferObject)binaryFormater.Deserialize(clientStream);
+
+            return (bool)transferObject.Result;
+        }
+
         internal List<Car> LoadCars()
         {
             DataTransferObject transferObject = new DataTransferObject
@@ -74,6 +87,7 @@ namespace rent_a_car.ClientSide
 
         internal Car GetCarByID(Car carForDisplaying)
         {
+            carForDisplaying.CONDITIONS = $"CarID == {carForDisplaying.CarID}";
             DataTransferObject transferObject = new DataTransferObject
             {
                 Operation = Operation.FindByIDCar,

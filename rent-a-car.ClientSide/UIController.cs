@@ -36,6 +36,28 @@ namespace rent_a_car.ClientSide
             return false;
         }
 
+        internal bool CloseReservation(DataGridView dgvRezervacije)
+        {
+            if (dgvRezervacije.SelectedRows[0] == null)
+            {
+                MessageBox.Show("Morate odabrati rezervaciju za otkaz!");
+                return false;
+            }
+            if (dgvRezervacije.SelectedRows[0].DataBoundItem is Reservation reservation)
+            {
+                reservation.CONDITIONS = $"ReservationID == {reservation.ReservationID}";
+
+                bool deletedReservation = NetworkCommunication.Instance.DeleteReservation(reservation);
+
+                return deletedReservation;
+            }
+            else
+            {
+                MessageBox.Show("Greska kod kastovanja reda tabele!");
+            }
+            return false;
+        }
+
         internal void SearchCars(TextBox txtMarka, TextBox txtModel, DataGridView dgvAutomobili)
         {
             string criteriaBrend = txtMarka.Text;
