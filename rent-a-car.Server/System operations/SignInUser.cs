@@ -18,7 +18,7 @@ namespace rent_a_car.Server.System_operations
 
             foreach(User u in users)
             {
-                if (u.Name == user.Name && u.Password == user.Password && u.Name == "admin")
+                if (u.Name == user.Name && u.Password == user.Password && u.UserType.UserTypeID == 1)
                 {
                     user.UserType = new UserType
                     {

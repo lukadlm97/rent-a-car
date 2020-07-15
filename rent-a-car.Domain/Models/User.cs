@@ -33,7 +33,7 @@ namespace rent_a_car.Domain.Models
         {
             get
             {
-                return "User";
+                return "RegUsers";
             }
         }
 
