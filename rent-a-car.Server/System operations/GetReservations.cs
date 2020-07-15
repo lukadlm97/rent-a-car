@@ -2,6 +2,7 @@
 using rent_a_car.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace rent_a_car.Server.System_operations
@@ -12,10 +13,10 @@ namespace rent_a_car.Server.System_operations
         {
             Reservation reservation = (Reservation)domainObject;
 
-            reservation.CONDITIONS = $"ReservationID={reservation.ReservationID}";
+            List<Reservation> reservations = Broker.Instance.GetAll(reservation).OfType<Reservation>().ToList();
 
 
-            return Broker.Instance.GetOneForID(reservation);
+            return reservations;
         }
     }
 }

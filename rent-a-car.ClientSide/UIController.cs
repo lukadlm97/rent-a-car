@@ -38,7 +38,7 @@ namespace rent_a_car.ClientSide
 
         internal bool CloseReservation(DataGridView dgvRezervacije)
         {
-            if (dgvRezervacije.SelectedRows[0] == null)
+            if (dgvRezervacije.SelectedRows.Count == 0 || dgvRezervacije.SelectedRows[0] == null)
             {
                 MessageBox.Show("Morate odabrati rezervaciju za otkaz!");
                 return false;
@@ -110,38 +110,40 @@ namespace rent_a_car.ClientSide
                 MessageBox.Show("Nije moguce pronaci automobil!");
                 return;
             }
-            lblMarka.Text = foundedCar.Brand;
-            lblModel.Text = foundedCar.Model;
+            lblMarka.Text = foundedCar.Brand.ToString() ;
+            lblModel.Text = foundedCar.Model.ToString();
 
         }
 
-        internal void LoadListOfReservation(DataGridView dgvReservation)
+        internal bool LoadListOfReservation(DataGridView dgvReservation)
         {
             List<Reservation> reservations = (List<Reservation>)NetworkCommunication.Instance.LoadReservation();
 
             if (reservations == null)
             {
-                MessageBox.Show("Sistem ne moze da ucita rezervacije!");
+                MessageBox.Show("Error while loading reservations!");
                 dgvReservation.DataSource = new BindingList<Reservation>();
-                return;
+                return false;
             }
-            MessageBox.Show("System has loaded cars!");
+            MessageBox.Show("System has loaded reservations!");
             dgvReservation.DataSource = new BindingList<Reservation>(reservations);
+            return true;
         }
 
 
-        internal void LoadListOfCars(DataGridView dgvAutomobili)
+        internal bool LoadListOfCars(DataGridView dgvAutomobili)
         {
             List<Car> cars = (List<Car>)NetworkCommunication.Instance.LoadCars();
 
             if(cars == null)
             {
-                MessageBox.Show("Ucitani su automobili!");
+                MessageBox.Show("Error while loading cars!");
                 dgvAutomobili.DataSource = new BindingList<Car>();
-                return;
+                return false;
             }
             MessageBox.Show("System has loaded cars!");
             dgvAutomobili.DataSource = new BindingList<Car>(cars);
+            return true;
         }
 
         internal bool CreateCar(TextBox txtMarka, TextBox txtModel)

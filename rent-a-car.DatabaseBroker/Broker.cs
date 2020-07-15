@@ -203,7 +203,7 @@ namespace rent_a_car.DatabaseBroker
                 if (tabela.Rows.Count == 0)
                     return null;
                 else
-                    return odo.ReadRowOfTableID(tabela.Rows[0]);
+                    return odo.ReadRowOfTable(tabela.Rows[0]);
             }
             catch (Exception)
             {

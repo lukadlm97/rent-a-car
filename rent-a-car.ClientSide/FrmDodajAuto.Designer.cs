@@ -227,6 +227,7 @@
             this.btnOdbaci.TabIndex = 21;
             this.btnOdbaci.Text = "Odbaci";
             this.btnOdbaci.UseVisualStyleBackColor = false;
+            this.btnOdbaci.Click += new System.EventHandler(cancel_Click);
             // 
             // FrmDodajAuto
             // 

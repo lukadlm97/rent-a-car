@@ -220,8 +220,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPrikazAutomobila";
             this.Text = "FrmPrikazAutomobila";
+            this.Load += new System.EventHandler(FrmPretragaAutomobila_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+          
 
         }
 

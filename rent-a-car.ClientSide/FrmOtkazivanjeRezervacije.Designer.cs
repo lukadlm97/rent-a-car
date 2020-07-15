@@ -107,7 +107,7 @@
             this.btnOtkaziRezervaciju.Name = "btnPrikaziAuto";
             this.btnOtkaziRezervaciju.Size = new System.Drawing.Size(120, 52);
             this.btnOtkaziRezervaciju.TabIndex = 16;
-            this.btnOtkaziRezervaciju.Text = "Prikaži";
+            this.btnOtkaziRezervaciju.Text = "Otkaži";
             this.btnOtkaziRezervaciju.UseVisualStyleBackColor = false;
             this.btnOtkaziRezervaciju.Click += new System.EventHandler(this.CloseReservation_Click);
             // 
@@ -123,6 +123,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmOtkazivanjeRezervacija";
             this.Text = "FrmOtkazivanjeRezervacija";
+            this.Load += new System.EventHandler(this.Frm_LoadReservation);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRezervacije)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

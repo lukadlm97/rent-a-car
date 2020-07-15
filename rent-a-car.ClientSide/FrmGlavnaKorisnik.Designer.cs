@@ -99,6 +99,7 @@
             this.obrisiProizvodToolStripMenuItem.Name = "obrisiProizvodToolStripMenuItem";
             this.obrisiProizvodToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.obrisiProizvodToolStripMenuItem.Text = "Odjava";
+            this.obrisiProizvodToolStripMenuItem.Click += new System.EventHandler(cancel_Click);
             // 
             // pretragaAutomobilaToolStripMenuItem
             // 

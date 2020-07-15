@@ -85,6 +85,7 @@
             this.btnOdjaviSe.TabIndex = 17;
             this.btnOdjaviSe.Text = "Odjava";
             this.btnOdjaviSe.UseVisualStyleBackColor = false;
+            this.btnOdjaviSe.Click += new System.EventHandler(cancel_Click);
             // 
             // btnKreirajKorisnika
             // 

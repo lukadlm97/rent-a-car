@@ -16,7 +16,7 @@ namespace rent_a_car.Server.System_operations
             
             user.UserType = new UserType
             {
-                UserTypeID = 1,
+                UserTypeID = 2,
                 TypeName = "user"
             };
 

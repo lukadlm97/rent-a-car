@@ -14,6 +14,17 @@ namespace rent_a_car.ClientSide
         {
             InitializeComponent();
         }
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void Frm_LoadReservation(object sender, EventArgs e)
+        {
+            if (!UIController.Instance.LoadListOfReservation(dgvRezervacije))
+            {
+
+            }
+        }
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();

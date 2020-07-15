@@ -15,9 +15,20 @@ namespace rent_a_car.ClientSide
         {
             InitializeComponent();
         }
+        private void FrmSearch_Load(object sender, EventArgs e)
+        {
+            if (!UIController.Instance.LoadListOfCars(dgvAutomobili))
+            {
+                this.Close();
+            }
+        }
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void label2_Click(object sender, EventArgs e)

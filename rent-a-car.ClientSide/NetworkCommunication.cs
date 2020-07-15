@@ -118,7 +118,7 @@ namespace rent_a_car.ClientSide
             DataTransferObject transferObject = new DataTransferObject
             {
                 Operation = Operation.GetAllReservations,
-                Object = new Car()
+                Object = new Reservation()
             };
 
             binaryFormater.Serialize(clientStream, transferObject);
