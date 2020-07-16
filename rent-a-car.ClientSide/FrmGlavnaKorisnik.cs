@@ -18,7 +18,12 @@ namespace rent_a_car.ClientSide
         {
             Application.Exit();
         }
-        
+       
+        private void reservationFrm_Click(object sender, EventArgs e)
+        {
+            FrmReservation frmReservation = new FrmReservation();
+            frmReservation.ShowDialog();
+        }
         private void cancel_Click(object sender, EventArgs e)
         {
             this.Close();

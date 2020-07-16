@@ -204,6 +204,7 @@ namespace rent_a_car.ClientSide
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Load += new System.EventHandler(this.FrmSearch_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutomobili)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

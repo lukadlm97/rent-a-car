@@ -75,6 +75,7 @@
             this.kreirajNovogKorisnikaToolStripMenuItem.Name = "kreirajNovogKorisnikaToolStripMenuItem";
             this.kreirajNovogKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(266, 26);
             this.kreirajNovogKorisnikaToolStripMenuItem.Text = "Rezervacija automobila";
+            this.kreirajNovogKorisnikaToolStripMenuItem.Click += new System.EventHandler(reservationFrm_Click);
             // 
             // proizvodiToolStripMenuItem
             // 
