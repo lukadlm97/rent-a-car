@@ -90,8 +90,9 @@ namespace rent_a_car.DatabaseBroker
             }
         }
 
-        public DomainObject GetForCondition(DomainObject odo)
+        public List<DomainObject> GetForCondition(DomainObject odo)
         {
+            List<DomainObject> lists = new List<DomainObject>();
             try
             {
                 command.CommandText = $"SELECT * FROM {odo.TableName} WHERE {odo.MainCondition}";
@@ -103,8 +104,13 @@ namespace rent_a_car.DatabaseBroker
 
                 if (tabela.Rows.Count == 0)
                     return null;
-                else
-                    return odo.ReadRowOfTableID(tabela.Rows[0]);
+
+                foreach (DataRow row in tabela.Rows)
+                {
+                    lists.Add(odo.ReadRowOfTable(row));
+                }
+
+                return lists;
             }
             catch (Exception)
             {

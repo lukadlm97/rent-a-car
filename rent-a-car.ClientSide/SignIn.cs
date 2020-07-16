@@ -18,7 +18,11 @@ namespace rent_a_car.ClientSide
         {
             MessageBox.Show("Uspesna prijava!");
         }
-
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            FrmPretragaAutomobila frmPretragaAutomobila = new FrmPretragaAutomobila();
+            frmPretragaAutomobila.ShowDialog();
+        }
         private void btnPrijaviSe_Click(object sender,EventArgs e)
         {
             

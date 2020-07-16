@@ -202,6 +202,7 @@
             this.button2.TabIndex = 28;
             this.button2.Text = "Pretraži automobile";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(btnPretrazi_Click);
             // 
             // FrmLogIn
             // 

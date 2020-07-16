@@ -65,7 +65,7 @@ namespace rent_a_car.ClientSide
 
             Car car = new Car();
 
-            car.CONDITIONS = $"Brend LIKE '%{criteriaBrend}%' OR Model LIKE '%{criteriaModel}%'";
+            car.CONDITIONS = $"Brand LIKE '%{criteriaBrend}%' OR Model LIKE '%{criteriaModel}%'";
 
             List<Car> cars = (List<Car>)NetworkCommunication.Instance.GetCarsByConditions(car);
 
@@ -80,7 +80,7 @@ namespace rent_a_car.ClientSide
 
         internal Car GetCarFromDgv(DataGridView dgvAutomobili)
         {
-            if (dgvAutomobili.SelectedRows[0] == null)
+            if (dgvAutomobili.Rows.Count == 0 || dgvAutomobili.SelectedRows[0] == null)
             {
                 MessageBox.Show("Morate odabrati polazak za prikaz detalja!");
                 return null;
